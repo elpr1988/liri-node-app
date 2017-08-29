@@ -9,8 +9,17 @@ var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotifyKeys);
 
 liri();
+log();
 
-function liri(){
+function log() {
+  fs.appendFile("log.txt", command + " " + title + "\r\n", function(error) {
+    if (error) {
+      console.log(error);
+    }
+  });
+}
+
+function liri() {
 	if(command === "my-tweets") {
 		tweets();
 	} else if (command === "spotify-this-song") {
