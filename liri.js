@@ -47,7 +47,7 @@ function tweets() {
 }
 //	"spotify-this-song"
 function spotifySong() {
-	if (title.length < 1) {
+	if (title != null) {
 		title = "The Sign Ace of Base";
 	};
 	spotify.search({ type: "track", query: title }, function(err, data) {
@@ -64,7 +64,7 @@ function spotifySong() {
 }
 //	"movie-this"
 function movie() {
-	if (title.length < 1) {
+	if (title != null) {
  		title = "Mr. Nobody";
  	};
 	var omdb = "http://www.omdbapi.com/?t=" + title +
